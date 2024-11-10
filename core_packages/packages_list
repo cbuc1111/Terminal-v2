@@ -1,3 +1,3 @@
-{
-  ["test"] = "https://raw.githubusercontent.com/cbuc1111/Terminal-v2/refs/heads/main/core_packages/test.lua"
-}
+[
+  {"test"} = "https://raw.githubusercontent.com/cbuc1111/Terminal-v2/refs/heads/main/core_packages/test.lua"
+]
