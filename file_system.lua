@@ -1,5 +1,5 @@
 local ServerScriptService = game:GetService("ServerScriptService")
-local Calculation = require(ServerScriptService.Modules.Calculation)
+local tableUtil = require("tableUtil")
 
 export type primitive = string | number | boolean | {primitive} | {[primitive]: primitive}
 export type permissions = {
@@ -341,7 +341,7 @@ end
 function FileSystem:copy(pathnameFrom: string, pathnameTo: string)
 	local node = _read(self, pathnameFrom, { ignoreLinks = true; })
 	assert(node, NO_SUCH_FILE_ERR)
-	_write(self, pathnameTo, Calculation:CopyTable(node))
+	_write(self, pathnameTo, tableUtil:Copy(node))
 end
 function FileSystem:moveMerge(pathnameFrom: string, pathnameTo: string)
 	local source = _read(self, pathnameFrom)
